@@ -15,6 +15,11 @@ class Vec3:
     def __mul__(self, scalar):
         return Vec3(self.x * scalar, self.y * scalar, self.z * scalar)
 
+    def __eq__(self, other):
+        if isinstance(other, Vec3):
+            return self.x == other.x and self.y == other.y and self.z == other.z
+        return False
+
     def __truediv__(self, scalar):
         if scalar != 0:
             return Vec3(self.x / scalar, self.y / scalar, self.z / scalar)
